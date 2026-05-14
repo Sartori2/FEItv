@@ -5,6 +5,7 @@ package com.mycompany.feitv.model;
  * @author user
  */
 public class Usuario {
+    private int id;
     private String nome;
     private String email;
     private String senha;
@@ -12,6 +13,14 @@ public class Usuario {
     public Usuario(){
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public Usuario(String nome, String email, String senha) {
         this.nome = nome;
         this.email = email;

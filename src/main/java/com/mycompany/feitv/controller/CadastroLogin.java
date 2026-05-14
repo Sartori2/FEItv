@@ -27,7 +27,11 @@ public class CadastroLogin {
             UsuarioDAO dao = new UsuarioDAO(conn);
             ResultSet res = dao.consultar(usuario);
             if (res.next()) {
-                Home home = new Home();
+                Usuario usuarioLogado = new Usuario();
+                usuarioLogado.setId(res.getInt("id"));
+                usuarioLogado.setNome(res.getString("nome"));
+                usuarioLogado.setEmail(res.getString("email"));
+                Home home = new Home(usuarioLogado);
                 home.setVisible(true);
                 tela.setVisible(false);
             } else {

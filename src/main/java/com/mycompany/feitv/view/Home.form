@@ -159,6 +159,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Curtir"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCurtir1ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -224,6 +227,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Curtir"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCurtir4ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -289,6 +295,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Curtir"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCurtir6ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -354,6 +363,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Curtir"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCurtir5ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -419,6 +431,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Curtir"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCurtir2ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -484,6 +499,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Curtir"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCurtir3ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

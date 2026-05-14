@@ -1,6 +1,7 @@
 package com.mycompany.feitv.view;
 
 import com.mycompany.feitv.controller.ControleHome;
+import com.mycompany.feitv.model.Usuario;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -19,10 +20,12 @@ public class Home extends javax.swing.JFrame {
      */
     
     private ControleHome c;
+    private Usuario usuarioLogado;
     
-    public Home() {
+    public Home(Usuario usuarioLogado) {
         initComponents();
-        c = new ControleHome(this);
+        this.usuarioLogado = usuarioLogado;
+        c = new ControleHome(this, usuarioLogado);
         c.carregarVideos();
     }
 
@@ -295,6 +298,7 @@ public class Home extends javax.swing.JFrame {
         lblCanal1.setText("Canal");
 
         btnCurtir1.setText("Curtir");
+        btnCurtir1.addActionListener(this::btnCurtir1ActionPerformed);
 
         javax.swing.GroupLayout pnVideo1Layout = new javax.swing.GroupLayout(pnVideo1);
         pnVideo1.setLayout(pnVideo1Layout);
@@ -332,6 +336,7 @@ public class Home extends javax.swing.JFrame {
         lblCanal4.setText("Canal");
 
         btnCurtir4.setText("Curtir");
+        btnCurtir4.addActionListener(this::btnCurtir4ActionPerformed);
 
         javax.swing.GroupLayout pnVideo4Layout = new javax.swing.GroupLayout(pnVideo4);
         pnVideo4.setLayout(pnVideo4Layout);
@@ -369,6 +374,7 @@ public class Home extends javax.swing.JFrame {
         lblCanal6.setText("Canal");
 
         btnCurtir6.setText("Curtir");
+        btnCurtir6.addActionListener(this::btnCurtir6ActionPerformed);
 
         javax.swing.GroupLayout pnVideo5Layout = new javax.swing.GroupLayout(pnVideo5);
         pnVideo5.setLayout(pnVideo5Layout);
@@ -406,6 +412,7 @@ public class Home extends javax.swing.JFrame {
         lblCanal5.setText("Canal");
 
         btnCurtir5.setText("Curtir");
+        btnCurtir5.addActionListener(this::btnCurtir5ActionPerformed);
 
         javax.swing.GroupLayout pnVideo6Layout = new javax.swing.GroupLayout(pnVideo6);
         pnVideo6.setLayout(pnVideo6Layout);
@@ -443,6 +450,7 @@ public class Home extends javax.swing.JFrame {
         lblCanal2.setText("Canal");
 
         btnCurtir2.setText("Curtir");
+        btnCurtir2.addActionListener(this::btnCurtir2ActionPerformed);
 
         javax.swing.GroupLayout pnVideo2Layout = new javax.swing.GroupLayout(pnVideo2);
         pnVideo2.setLayout(pnVideo2Layout);
@@ -480,6 +488,7 @@ public class Home extends javax.swing.JFrame {
         lblCanal3.setText("Canal");
 
         btnCurtir3.setText("Curtir");
+        btnCurtir3.addActionListener(this::btnCurtir3ActionPerformed);
 
         javax.swing.GroupLayout pnVideo3Layout = new javax.swing.GroupLayout(pnVideo3);
         pnVideo3.setLayout(pnVideo3Layout);
@@ -568,30 +577,54 @@ public class Home extends javax.swing.JFrame {
         c.buscarVideo();
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
+    private void btnCurtir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCurtir1ActionPerformed
+        c.curtirVideo(1, btnCurtir1);
+    }//GEN-LAST:event_btnCurtir1ActionPerformed
+
+    private void btnCurtir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCurtir2ActionPerformed
+        c.curtirVideo(2, btnCurtir2);
+    }//GEN-LAST:event_btnCurtir2ActionPerformed
+
+    private void btnCurtir3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCurtir3ActionPerformed
+        c.curtirVideo(3, btnCurtir3);
+    }//GEN-LAST:event_btnCurtir3ActionPerformed
+
+    private void btnCurtir4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCurtir4ActionPerformed
+        c.curtirVideo(4, btnCurtir4);
+    }//GEN-LAST:event_btnCurtir4ActionPerformed
+
+    private void btnCurtir5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCurtir5ActionPerformed
+        c.curtirVideo(5, btnCurtir5);
+    }//GEN-LAST:event_btnCurtir5ActionPerformed
+
+    private void btnCurtir6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCurtir6ActionPerformed
+        c.curtirVideo(6, btnCurtir6);
+    }//GEN-LAST:event_btnCurtir6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Home().setVisible(true));
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
+//            logger.log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(() -> new Home(usuarioLogado).setVisible(true));
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCurtir1;

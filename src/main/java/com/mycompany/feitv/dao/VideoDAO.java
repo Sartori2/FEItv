@@ -60,4 +60,32 @@ public class VideoDAO {
         stmt.execute();
         conn.close();
     }
+    
+    public boolean usuarioCurtiu(int idUsuario, int idVideo) throws SQLException {
+        String sql = "SELECT * FROM curtida WHERE id_usuario = ? AND id_video = ?";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setInt(1, idUsuario);
+        stmt.setInt(2, idVideo);
+        ResultSet rs = stmt.executeQuery();
+        return rs.next();
+    }
+
+    public void curtir(int idUsuario, int idVideo) throws SQLException {
+        String sql = "INSERT INTO curtida (id_usuario, id_video) VALUES (?, ?)";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setInt(1, idUsuario);
+        stmt.setInt(2, idVideo);
+        stmt.execute();
+        conn.close();
+    }
+
+    public void descurtir(int idUsuario, int idVideo) throws SQLException {
+        String sql = "DELETE FROM curtida WHERE id_usuario = ? AND id_video = ?";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setInt(1, idUsuario);
+        stmt.setInt(2, idVideo);
+        stmt.execute();
+        conn.close();
+    }
+    
 }
