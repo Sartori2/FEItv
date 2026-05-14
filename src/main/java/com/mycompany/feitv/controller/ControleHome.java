@@ -5,6 +5,7 @@ import com.mycompany.feitv.dao.VideoDAO;
 import com.mycompany.feitv.model.Usuario;
 import com.mycompany.feitv.model.Video;
 import com.mycompany.feitv.view.Home;
+import com.mycompany.feitv.view.InformacaoVideo;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
@@ -71,14 +72,20 @@ public void carregarVideos() {
             VideoDAO dao = new VideoDAO(conn);
             List<Video> videos = dao.buscarPorTitulo(busca);
             if (videos.isEmpty()) {
-                JOptionPane.showMessageDialog(tela, "Nenhum vídeo encontrado",
+                JOptionPane.showMessageDialog(tela, "Nenhum vídeo encontrado!",
                                               "Aviso", JOptionPane.WARNING_MESSAGE);
             } else {
-                JOptionPane.showMessageDialog(tela, "Vídeo encontrado: " + videosCarregados.get(0).getTitulo(),
+                // mostra todos os videos encontrados
+                StringBuilder resultado = new StringBuilder("Vídeos encontrados:\n");
+                for (Video v : videos) {
+                    resultado.append("- ").append(v.getTitulo())
+                             .append(" (").append(v.getCanal()).append(")\n");
+                }
+                JOptionPane.showMessageDialog(tela, resultado.toString(),
                                               "Resultado", JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(tela, "Erro ao encontrar vídeo",
+            JOptionPane.showMessageDialog(tela, "Erro ao buscar vídeo!",
                                           "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }
@@ -102,4 +109,10 @@ public void carregarVideos() {
                                           "Erro", JOptionPane.ERROR_MESSAGE);
     }
 }
+
+    public void abrirVideo(int posicao) {
+        Video video = videosCarregados.get(posicao);
+        InformacaoVideo tela = new InformacaoVideo(usuarioLogado, video);
+        tela.setVisible(true);
+    }
 }

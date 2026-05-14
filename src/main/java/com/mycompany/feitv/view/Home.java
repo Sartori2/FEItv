@@ -27,6 +27,12 @@ public class Home extends javax.swing.JFrame {
         this.usuarioLogado = usuarioLogado;
         c = new ControleHome(this, usuarioLogado);
         c.carregarVideos();
+        adicionarCliquePainel(pnVideo1, 0);
+        adicionarCliquePainel(pnVideo2, 1);
+        adicionarCliquePainel(pnVideo3, 2);
+        adicionarCliquePainel(pnVideo4, 3);
+        adicionarCliquePainel(pnVideo5, 4);
+        adicionarCliquePainel(pnVideo6, 5);
     }
 
     public JButton getBtnCurtir1() {
@@ -312,9 +318,9 @@ public class Home extends javax.swing.JFrame {
                     .addGroup(pnVideo1Layout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addGroup(pnVideo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblCanal1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(65, Short.MAX_VALUE))
+                            .addComponent(lblCanal1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         pnVideo1Layout.setVerticalGroup(
             pnVideo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -345,14 +351,16 @@ public class Home extends javax.swing.JFrame {
             .addGroup(pnVideo4Layout.createSequentialGroup()
                 .addGroup(pnVideo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnVideo4Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(btnCurtir4))
-                    .addGroup(pnVideo4Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
                         .addGroup(pnVideo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCanal4, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblTitulo4, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(pnVideo4Layout.createSequentialGroup()
+                                .addGap(53, 53, 53)
+                                .addComponent(btnCurtir4))
+                            .addGroup(pnVideo4Layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(lblCanal4, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(lblTitulo4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         pnVideo4Layout.setVerticalGroup(
             pnVideo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -388,9 +396,9 @@ public class Home extends javax.swing.JFrame {
                     .addGroup(pnVideo5Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(pnVideo5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblTitulo6, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblCanal6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(59, Short.MAX_VALUE))
+                            .addComponent(lblCanal6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTitulo6, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         pnVideo5Layout.setVerticalGroup(
             pnVideo5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -421,14 +429,16 @@ public class Home extends javax.swing.JFrame {
             .addGroup(pnVideo6Layout.createSequentialGroup()
                 .addGroup(pnVideo6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnVideo6Layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(btnCurtir5))
-                    .addGroup(pnVideo6Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
                         .addGroup(pnVideo6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCanal5, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblTitulo5, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(pnVideo6Layout.createSequentialGroup()
+                                .addGap(58, 58, 58)
+                                .addComponent(btnCurtir5))
+                            .addGroup(pnVideo6Layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(lblCanal5, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(lblTitulo5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         pnVideo6Layout.setVerticalGroup(
             pnVideo6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -464,8 +474,8 @@ public class Home extends javax.swing.JFrame {
                     .addGroup(pnVideo2Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addGroup(pnVideo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblTitulo2, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblCanal2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(lblCanal2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTitulo2, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnVideo2Layout.setVerticalGroup(
@@ -497,14 +507,16 @@ public class Home extends javax.swing.JFrame {
             .addGroup(pnVideo3Layout.createSequentialGroup()
                 .addGroup(pnVideo3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnVideo3Layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addComponent(btnCurtir3))
-                    .addGroup(pnVideo3Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
                         .addGroup(pnVideo3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCanal3)
-                            .addComponent(lblTitulo3, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(pnVideo3Layout.createSequentialGroup()
+                                .addGap(54, 54, 54)
+                                .addComponent(btnCurtir3))
+                            .addGroup(pnVideo3Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(lblCanal3)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(lblTitulo3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         pnVideo3Layout.setVerticalGroup(
             pnVideo3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -600,7 +612,15 @@ public class Home extends javax.swing.JFrame {
     private void btnCurtir6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCurtir6ActionPerformed
         c.curtirVideo(5, btnCurtir6);
     }//GEN-LAST:event_btnCurtir6ActionPerformed
-
+    
+    private void adicionarCliquePainel(javax.swing.JPanel painel, int posicao) {
+        painel.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                c.abrirVideo(posicao);
+            }
+        });
+    }
     /**
      * @param args the command line arguments
      */
