@@ -3,6 +3,7 @@ package com.mycompany.feitv.controller;
 import com.mycompany.feitv.dao.Conexao;
 import com.mycompany.feitv.dao.UsuarioDAO;
 import com.mycompany.feitv.model.Usuario;
+import com.mycompany.feitv.view.Home;
 import com.mycompany.feitv.view.Login;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -26,10 +27,11 @@ public class CadastroLogin {
             UsuarioDAO dao = new UsuarioDAO(conn);
             ResultSet res = dao.consultar(usuario);
             if (res.next()) {
-                JOptionPane.showMessageDialog(tela, "Login efetuado", 
-                                              "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                Home home = new Home();
+                home.setVisible(true);
+                tela.setVisible(false);
             } else {
-                JOptionPane.showMessageDialog(tela, "Login não efetuado", 
+                JOptionPane.showMessageDialog(tela, "Email ou senha incorretos!", 
                                               "Erro", JOptionPane.ERROR_MESSAGE);
             }
         } catch (SQLException e) {
