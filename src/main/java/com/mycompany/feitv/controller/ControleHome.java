@@ -15,6 +15,7 @@ public class ControleHome {
     
     private Home tela;
     private Usuario usuarioLogado;
+    private List<Video> videosCarregados;
     
     public ControleHome(Home tela, Usuario usuarioLogado) {
         this.tela = tela;
@@ -26,35 +27,35 @@ public void carregarVideos() {
     try {
         Connection conn = conexao.getConnection();
         VideoDAO dao = new VideoDAO(conn);
-        List<Video> videos = dao.listarTodos();
+        videosCarregados = dao.listarTodos();
         
-        tela.getLblTitulo1().setText(videos.get(0).getTitulo());
-        tela.getLblTitulo2().setText(videos.get(1).getTitulo());
-        tela.getLblTitulo3().setText(videos.get(2).getTitulo());
-        tela.getLblTitulo4().setText(videos.get(3).getTitulo());
-        tela.getLblTitulo5().setText(videos.get(4).getTitulo());
-        tela.getLblTitulo6().setText(videos.get(5).getTitulo());
+        tela.getLblTitulo1().setText(videosCarregados.get(0).getTitulo());
+        tela.getLblTitulo2().setText(videosCarregados.get(1).getTitulo());
+        tela.getLblTitulo3().setText(videosCarregados.get(2).getTitulo());
+        tela.getLblTitulo4().setText(videosCarregados.get(3).getTitulo());
+        tela.getLblTitulo5().setText(videosCarregados.get(4).getTitulo());
+        tela.getLblTitulo6().setText(videosCarregados.get(5).getTitulo());
         
-        tela.getLblCanal1().setText(videos.get(0).getCanal());
-        tela.getLblCanal2().setText(videos.get(1).getCanal());
-        tela.getLblCanal3().setText(videos.get(2).getCanal());
-        tela.getLblCanal4().setText(videos.get(3).getCanal());
-        tela.getLblCanal5().setText(videos.get(4).getCanal());
-        tela.getLblCanal6().setText(videos.get(5).getCanal());
+        tela.getLblCanal1().setText(videosCarregados.get(0).getCanal());
+        tela.getLblCanal2().setText(videosCarregados.get(1).getCanal());
+        tela.getLblCanal3().setText(videosCarregados.get(2).getCanal());
+        tela.getLblCanal4().setText(videosCarregados.get(3).getCanal());
+        tela.getLblCanal5().setText(videosCarregados.get(4).getCanal());
+        tela.getLblCanal6().setText(videosCarregados.get(5).getCanal());
         
         // Verifica curtidas de cada vídeo
-        if (dao.usuarioCurtiu(usuarioLogado.getId(), videos.get(0).getId()))
-            tela.getBtnCurtir1().setText("❤️ Curtir");
-        if (dao.usuarioCurtiu(usuarioLogado.getId(), videos.get(1).getId()))
-            tela.getBtnCurtir2().setText("❤️ Curtir");
-        if (dao.usuarioCurtiu(usuarioLogado.getId(), videos.get(2).getId()))
-            tela.getBtnCurtir3().setText("❤️ Curtir");
-        if (dao.usuarioCurtiu(usuarioLogado.getId(), videos.get(3).getId()))
-            tela.getBtnCurtir4().setText("❤️ Curtir");
-        if (dao.usuarioCurtiu(usuarioLogado.getId(), videos.get(4).getId()))
-            tela.getBtnCurtir5().setText("❤️ Curtir");
-        if (dao.usuarioCurtiu(usuarioLogado.getId(), videos.get(5).getId()))
-            tela.getBtnCurtir6().setText("❤️ Curtir");
+        if (dao.usuarioCurtiu(usuarioLogado.getId(), videosCarregados.get(0).getId()))
+            tela.getBtnCurtir1().setText("❤️ Descurtir");
+        if (dao.usuarioCurtiu(usuarioLogado.getId(), videosCarregados.get(1).getId()))
+            tela.getBtnCurtir2().setText("❤️ Descurtir");
+        if (dao.usuarioCurtiu(usuarioLogado.getId(), videosCarregados.get(2).getId()))
+            tela.getBtnCurtir3().setText("❤️ Descurtir");
+        if (dao.usuarioCurtiu(usuarioLogado.getId(), videosCarregados.get(3).getId()))
+            tela.getBtnCurtir4().setText("❤️ Descurtir");
+        if (dao.usuarioCurtiu(usuarioLogado.getId(), videosCarregados.get(4).getId()))
+            tela.getBtnCurtir5().setText("❤️ Descurtir");
+        if (dao.usuarioCurtiu(usuarioLogado.getId(), videosCarregados.get(5).getId()))
+            tela.getBtnCurtir6().setText("❤️ Descurtir");
         
     } catch (SQLException e) {
         JOptionPane.showMessageDialog(tela, "Erro ao carregar vídeos!",
@@ -73,7 +74,7 @@ public void carregarVideos() {
                 JOptionPane.showMessageDialog(tela, "Nenhum vídeo encontrado",
                                               "Aviso", JOptionPane.WARNING_MESSAGE);
             } else {
-                JOptionPane.showMessageDialog(tela, "Vídeo encontrado: " + videos.get(0).getTitulo(),
+                JOptionPane.showMessageDialog(tela, "Vídeo encontrado: " + videosCarregados.get(0).getTitulo(),
                                               "Resultado", JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (SQLException e) {
@@ -82,24 +83,23 @@ public void carregarVideos() {
         }
     }
     
-    public void curtirVideo(int idVideo, JButton btnCurtir) {
+    public void curtirVideo(int posicao, JButton btnCurtir) {
+        int idVideo = videosCarregados.get(posicao).getId();
         Conexao conexao = new Conexao();
         try {
             Connection conn = conexao.getConnection();
             VideoDAO dao = new VideoDAO(conn);
 
             if (dao.usuarioCurtiu(usuarioLogado.getId(), idVideo)) {
-                // já curtiu, então descurte
                 dao.descurtir(usuarioLogado.getId(), idVideo);
                 btnCurtir.setText("Curtir");
             } else {
-                // não curtiu, então curte
                 dao.curtir(usuarioLogado.getId(), idVideo);
                 btnCurtir.setText("❤️ Descurtir");
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(tela, "Erro ao curtir!",
                                           "Erro", JOptionPane.ERROR_MESSAGE);
-        }
     }
+}
 }

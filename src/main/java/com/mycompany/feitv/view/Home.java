@@ -555,7 +555,7 @@ public class Home extends javax.swing.JFrame {
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnFavoritos, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -578,27 +578,27 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
     private void btnCurtir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCurtir1ActionPerformed
-        c.curtirVideo(1, btnCurtir1);
+        c.curtirVideo(0, btnCurtir1);
     }//GEN-LAST:event_btnCurtir1ActionPerformed
 
     private void btnCurtir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCurtir2ActionPerformed
-        c.curtirVideo(2, btnCurtir2);
+        c.curtirVideo(1, btnCurtir2);
     }//GEN-LAST:event_btnCurtir2ActionPerformed
 
     private void btnCurtir3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCurtir3ActionPerformed
-        c.curtirVideo(3, btnCurtir3);
+        c.curtirVideo(2, btnCurtir3);
     }//GEN-LAST:event_btnCurtir3ActionPerformed
 
     private void btnCurtir4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCurtir4ActionPerformed
-        c.curtirVideo(4, btnCurtir4);
+        c.curtirVideo(3, btnCurtir4);
     }//GEN-LAST:event_btnCurtir4ActionPerformed
 
     private void btnCurtir5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCurtir5ActionPerformed
-        c.curtirVideo(5, btnCurtir5);
+        c.curtirVideo(4, btnCurtir5);
     }//GEN-LAST:event_btnCurtir5ActionPerformed
 
     private void btnCurtir6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCurtir6ActionPerformed
-        c.curtirVideo(6, btnCurtir6);
+        c.curtirVideo(5, btnCurtir6);
     }//GEN-LAST:event_btnCurtir6ActionPerformed
 
     /**

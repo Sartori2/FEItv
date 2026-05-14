@@ -76,6 +76,12 @@ public class VideoDAO {
         stmt.setInt(1, idUsuario);
         stmt.setInt(2, idVideo);
         stmt.execute();
+
+        String sqlUpdate = "UPDATE video SET curtidas = curtidas + 1 WHERE id = ?";
+        PreparedStatement stmtUpdate = conn.prepareStatement(sqlUpdate);
+        stmtUpdate.setInt(1, idVideo);
+        stmtUpdate.execute();
+
         conn.close();
     }
 
@@ -85,6 +91,12 @@ public class VideoDAO {
         stmt.setInt(1, idUsuario);
         stmt.setInt(2, idVideo);
         stmt.execute();
+
+        String sqlUpdate = "UPDATE video SET curtidas = curtidas - 1 WHERE id = ?";
+        PreparedStatement stmtUpdate = conn.prepareStatement(sqlUpdate);
+        stmtUpdate.setInt(1, idVideo);
+        stmtUpdate.execute();
+
         conn.close();
     }
     
