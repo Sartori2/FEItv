@@ -27,7 +27,8 @@ public class VideoDAO {
                 rs.getString("titulo"),
                 rs.getString("descricao"),
                 rs.getString("canal"),
-                rs.getInt("curtidas")
+                rs.getInt("curtidas"),
+                rs.getString("thumbnail")
             );
             videos.add(v);
         }
@@ -46,7 +47,8 @@ public class VideoDAO {
                 rs.getString("titulo"),
                 rs.getString("descricao"),
                 rs.getString("canal"),
-                rs.getInt("curtidas")
+                rs.getInt("curtidas"),
+                rs.getString("thumbnail")
             );
             videos.add(v);
         }

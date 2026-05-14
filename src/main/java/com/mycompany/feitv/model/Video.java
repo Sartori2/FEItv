@@ -11,16 +11,26 @@ public class Video {
     private String descricao;
     private String canal;
     private int curtidas;
+    private String thumbnail;
     
     public Video() {
     }
     
-    public Video(int id, String titulo, String descricao, String canal, int curtidas) {
+    public Video(int id, String titulo, String descricao, String canal, int curtidas, String thumbnail) {
         this.id = id;
         this.titulo = titulo;
         this.descricao = descricao;
         this.canal = canal;
         this.curtidas = curtidas;
+        this.thumbnail = thumbnail;
+    }
+    
+    public String getThumbnail() { 
+        return thumbnail; 
+    }
+    
+    public void setThumbnail(String thumbnail) { 
+        this.thumbnail = thumbnail; 
     }
     
     public int getId() { 

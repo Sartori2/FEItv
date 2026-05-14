@@ -6,9 +6,11 @@ import com.mycompany.feitv.model.Usuario;
 import com.mycompany.feitv.model.Video;
 import com.mycompany.feitv.view.Home;
 import com.mycompany.feitv.view.InformacaoVideo;
+import java.awt.Image;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
@@ -44,19 +46,12 @@ public void carregarVideos() {
         tela.getLblCanal5().setText(videosCarregados.get(4).getCanal());
         tela.getLblCanal6().setText(videosCarregados.get(5).getCanal());
         
-        // Verifica curtidas de cada vídeo
-        if (dao.usuarioCurtiu(usuarioLogado.getId(), videosCarregados.get(0).getId()))
-            tela.getBtnCurtir1().setText("❤️ Descurtir");
-        if (dao.usuarioCurtiu(usuarioLogado.getId(), videosCarregados.get(1).getId()))
-            tela.getBtnCurtir2().setText("❤️ Descurtir");
-        if (dao.usuarioCurtiu(usuarioLogado.getId(), videosCarregados.get(2).getId()))
-            tela.getBtnCurtir3().setText("❤️ Descurtir");
-        if (dao.usuarioCurtiu(usuarioLogado.getId(), videosCarregados.get(3).getId()))
-            tela.getBtnCurtir4().setText("❤️ Descurtir");
-        if (dao.usuarioCurtiu(usuarioLogado.getId(), videosCarregados.get(4).getId()))
-            tela.getBtnCurtir5().setText("❤️ Descurtir");
-        if (dao.usuarioCurtiu(usuarioLogado.getId(), videosCarregados.get(5).getId()))
-            tela.getBtnCurtir6().setText("❤️ Descurtir");
+        carregarThumbnail(tela.getLblThumb1(), videosCarregados.get(0).getThumbnail());
+        carregarThumbnail(tela.getLblThumb2(), videosCarregados.get(1).getThumbnail());
+        carregarThumbnail(tela.getLblThumb3(), videosCarregados.get(2).getThumbnail());
+        carregarThumbnail(tela.getLblThumb4(), videosCarregados.get(3).getThumbnail());
+        carregarThumbnail(tela.getLblThumb5(), videosCarregados.get(4).getThumbnail());
+        carregarThumbnail(tela.getLblThumb6(), videosCarregados.get(5).getThumbnail());
         
     } catch (SQLException e) {
         JOptionPane.showMessageDialog(tela, "Erro ao carregar vídeos!",
@@ -110,6 +105,20 @@ public void carregarVideos() {
     }
 }
 
+    private void carregarThumbnail(javax.swing.JLabel label, String caminho) {
+        try {
+            java.net.URL imgUrl = getClass().getClassLoader().getResource(caminho);
+            if (imgUrl != null) {
+                ImageIcon icon = new ImageIcon(imgUrl);
+                Image img = icon.getImage().getScaledInstance(
+                    label.getWidth(), label.getHeight(), Image.SCALE_SMOOTH);
+                label.setIcon(new ImageIcon(img));
+            }
+        } catch (Exception e) {
+            System.out.println("Erro ao carregar thumbnail: " + caminho);
+        }
+    }
+    
     public void abrirVideo(int posicao) {
         Video video = videosCarregados.get(posicao);
         InformacaoVideo tela = new InformacaoVideo(usuarioLogado, video);
