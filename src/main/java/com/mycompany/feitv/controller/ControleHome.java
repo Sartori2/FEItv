@@ -4,6 +4,7 @@ import com.mycompany.feitv.dao.Conexao;
 import com.mycompany.feitv.dao.VideoDAO;
 import com.mycompany.feitv.model.Usuario;
 import com.mycompany.feitv.model.Video;
+import com.mycompany.feitv.view.Favoritos;
 import com.mycompany.feitv.view.Home;
 import com.mycompany.feitv.view.InformacaoVideo;
 import java.awt.Image;
@@ -54,7 +55,7 @@ public void carregarVideos() {
         carregarThumbnail(tela.getLblThumb6(), videosCarregados.get(5).getThumbnail());
         
     } catch (SQLException e) {
-        JOptionPane.showMessageDialog(tela, "Erro ao carregar vídeos!",
+        JOptionPane.showMessageDialog(tela, "Erro ao carregar vídeos",
                                       "Erro", JOptionPane.ERROR_MESSAGE);
     }
 }
@@ -67,7 +68,7 @@ public void carregarVideos() {
             VideoDAO dao = new VideoDAO(conn);
             List<Video> videos = dao.buscarPorTitulo(busca);
             if (videos.isEmpty()) {
-                JOptionPane.showMessageDialog(tela, "Nenhum vídeo encontrado!",
+                JOptionPane.showMessageDialog(tela, "Nenhum vídeo encontrado",
                                               "Aviso", JOptionPane.WARNING_MESSAGE);
             } else {
                 // mostra todos os videos encontrados
@@ -80,7 +81,7 @@ public void carregarVideos() {
                                               "Resultado", JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(tela, "Erro ao buscar vídeo!",
+            JOptionPane.showMessageDialog(tela, "Erro ao buscar vídeo",
                                           "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }
@@ -122,6 +123,11 @@ public void carregarVideos() {
     public void abrirVideo(int posicao) {
         Video video = videosCarregados.get(posicao);
         InformacaoVideo tela = new InformacaoVideo(usuarioLogado, video);
+        tela.setVisible(true);
+    }
+    
+    public void abrirFavoritos() {
+        Favoritos tela = new Favoritos(usuarioLogado);
         tela.setVisible(true);
     }
 }

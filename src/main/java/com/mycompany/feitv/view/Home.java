@@ -296,6 +296,7 @@ public class Home extends javax.swing.JFrame {
         btnPesquisar.addActionListener(this::btnPesquisarActionPerformed);
 
         btnFavoritos.setText("Favoritos");
+        btnFavoritos.addActionListener(this::btnFavoritosActionPerformed);
 
         pnVideo1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -556,6 +557,10 @@ public class Home extends javax.swing.JFrame {
     private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
         c.buscarVideo();
     }//GEN-LAST:event_btnPesquisarActionPerformed
+
+    private void btnFavoritosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFavoritosActionPerformed
+        c.abrirFavoritos();
+    }//GEN-LAST:event_btnFavoritosActionPerformed
     
     private void adicionarCliquePainel(javax.swing.JPanel painel, int posicao) {
         painel.addMouseListener(new java.awt.event.MouseAdapter() {
