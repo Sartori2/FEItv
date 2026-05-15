@@ -5,6 +5,7 @@ import com.mycompany.feitv.dao.ListaDAO;
 import com.mycompany.feitv.model.ListaReproducao;
 import com.mycompany.feitv.model.Usuario;
 import com.mycompany.feitv.view.Favoritos;
+import com.mycompany.feitv.view.VideoLista;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
@@ -108,4 +109,17 @@ public class ControleFavoritos {
                                           "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }
+    
+    public void abrirLista() {
+        int index = tela.getListFav().getSelectedIndex();
+        if (index == -1) {
+            JOptionPane.showMessageDialog(tela, "Selecione uma lista",
+                                          "Aviso", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        ListaReproducao lista = listas.get(index);
+        VideoLista videosLista = new VideoLista(usuarioLogado, lista);
+        videosLista.setVisible(true);
+    }
+    
 }

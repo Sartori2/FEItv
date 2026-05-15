@@ -4,7 +4,7 @@ package com.mycompany.feitv.model;
  *
  * @author user
  */
-public class Video {
+public abstract class Video {
     
     private int id;
     private String titulo;

@@ -3,6 +3,7 @@ C:\Users\user\Documents\GitHub\FEItv\src\main\java\com\mycompany\feitv\controlle
 C:\Users\user\Documents\GitHub\FEItv\src\main\java\com\mycompany\feitv\controller\ControleFavoritos.java
 C:\Users\user\Documents\GitHub\FEItv\src\main\java\com\mycompany\feitv\controller\ControleHome.java
 C:\Users\user\Documents\GitHub\FEItv\src\main\java\com\mycompany\feitv\controller\ControleVideo.java
+C:\Users\user\Documents\GitHub\FEItv\src\main\java\com\mycompany\feitv\controller\ControleVideosLista.java
 C:\Users\user\Documents\GitHub\FEItv\src\main\java\com\mycompany\feitv\dao\Conexao.java
 C:\Users\user\Documents\GitHub\FEItv\src\main\java\com\mycompany\feitv\dao\ListaDAO.java
 C:\Users\user\Documents\GitHub\FEItv\src\main\java\com\mycompany\feitv\dao\UsuarioDAO.java
@@ -16,3 +17,4 @@ C:\Users\user\Documents\GitHub\FEItv\src\main\java\com\mycompany\feitv\view\Favo
 C:\Users\user\Documents\GitHub\FEItv\src\main\java\com\mycompany\feitv\view\Home.java
 C:\Users\user\Documents\GitHub\FEItv\src\main\java\com\mycompany\feitv\view\InformacaoVideo.java
 C:\Users\user\Documents\GitHub\FEItv\src\main\java\com\mycompany\feitv\view\Login.java
+C:\Users\user\Documents\GitHub\FEItv\src\main\java\com\mycompany\feitv\view\VideoLista.java

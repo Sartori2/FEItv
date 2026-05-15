@@ -1,6 +1,7 @@
 package com.mycompany.feitv.dao;
 
 import com.mycompany.feitv.model.ListaReproducao;
+import com.mycompany.feitv.model.Video;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -80,4 +81,27 @@ public class ListaDAO {
         stmt.execute();
         conn.close();
     }
+    
+    public List<Video> listarVideosDaLista(int idLista) throws SQLException {
+        List<Video> videos = new ArrayList<>();
+        String sql = "SELECT v.* FROM video v "
+                   + "INNER JOIN video_lista vl ON v.id = vl.id_video "
+                   + "WHERE vl.id_lista = ?";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setInt(1, idLista);
+        ResultSet rs = stmt.executeQuery();
+        while (rs.next()) {
+            Video v = new Video(
+                rs.getInt("id"),
+                rs.getString("titulo"),
+                rs.getString("descricao"),
+                rs.getString("canal"),
+                rs.getInt("curtidas"),
+                rs.getString("thumbnail")
+            );
+            videos.add(v);
+        }
+        return videos;
+    }
+    
 }
