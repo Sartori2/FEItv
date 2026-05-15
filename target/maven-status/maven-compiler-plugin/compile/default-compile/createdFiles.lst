@@ -2,12 +2,9 @@ com\mycompany\feitv\controller\ControleCadastro.class
 com\mycompany\feitv\controller\ControleVideosLista.class
 com\mycompany\feitv\model\Video.class
 com\mycompany\feitv\controller\ControleHome.class
-com\mycompany\feitv\dao\ListaDAO.class
 com\mycompany\feitv\FEItv.class
 com\mycompany\feitv\view\Home$1.class
 com\mycompany\feitv\controller\ControleVideo.class
-com\mycompany\feitv\dao\UsuarioDAO.class
-com\mycompany\feitv\dao\VideoDAO.class
 com\mycompany\feitv\view\Login.class
 com\mycompany\feitv\view\Favoritos.class
 com\mycompany\feitv\view\VideoLista$1.class
