@@ -29,7 +29,7 @@ public class VideoDAO {
                 rs.getString("canal"),
                 rs.getInt("curtidas"),
                 rs.getString("thumbnail")
-            );
+            ) {};
             videos.add(v);
         }
         return videos;
@@ -49,7 +49,7 @@ public class VideoDAO {
                 rs.getString("canal"),
                 rs.getInt("curtidas"),
                 rs.getString("thumbnail")
-            );
+            ) {};
             videos.add(v);
         }
         return videos;

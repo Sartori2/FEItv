@@ -22,7 +22,7 @@ public class ControleCadastro {
         String senha = tela.getTxtSenha().getText();
         
         if (nome.isEmpty() || email.isEmpty() || senha.isEmpty()) {
-            JOptionPane.showMessageDialog(tela, "Preencha todos os campos!",
+            JOptionPane.showMessageDialog(tela, "Preencha todos os campos",
                                           "Aviso", JOptionPane.WARNING_MESSAGE);
             return;
         }
@@ -33,10 +33,10 @@ public class ControleCadastro {
             Connection conn = conexao.getConnection();
             UsuarioDAO dao = new UsuarioDAO(conn);
             dao.inserir(usuario);
-            JOptionPane.showMessageDialog(tela, "Usuario Cadastrado!",
+            JOptionPane.showMessageDialog(tela, "Usuario Cadastrado",
                                           "Aviso", JOptionPane.INFORMATION_MESSAGE);
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(tela, "Usuário não cadastrado!",
+            JOptionPane.showMessageDialog(tela, "Usuário não cadastrado",
                                           "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }

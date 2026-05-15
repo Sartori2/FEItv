@@ -27,7 +27,7 @@ public class ControleVideo {
         try {
             Connection conn = conexao.getConnection();
             VideoDAO dao = new VideoDAO(conn);
-
+            
             List<Video> videos = dao.listarTodos();
             for (Video v : videos) {
                 if (v.getId() == video.getId()) {
@@ -46,7 +46,7 @@ public class ControleVideo {
                 tela.getBtnCurtir().setText("❤️ Descurtir");
             }
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(tela, "Erro ao carregar!",
+            JOptionPane.showMessageDialog(tela, "Erro ao carregar",
                                           "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }

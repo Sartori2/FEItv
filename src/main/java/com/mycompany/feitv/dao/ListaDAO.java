@@ -98,7 +98,7 @@ public class ListaDAO {
                 rs.getString("canal"),
                 rs.getInt("curtidas"),
                 rs.getString("thumbnail")
-            );
+            ) {};
             videos.add(v);
         }
         return videos;

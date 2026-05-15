@@ -35,7 +35,7 @@ public class CadastroLogin {
                 home.setVisible(true);
                 tela.setVisible(false);
             } else {
-                JOptionPane.showMessageDialog(tela, "Email ou senha incorretos!", 
+                JOptionPane.showMessageDialog(tela, "Email ou senha incorretos", 
                                               "Erro", JOptionPane.ERROR_MESSAGE);
             }
         } catch (SQLException e) {

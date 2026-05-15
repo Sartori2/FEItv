@@ -10,6 +10,7 @@ public class Usuario {
     private String email;
     private String senha;
     
+    //Construtores Get/Set
     public Usuario(){
     }
 
