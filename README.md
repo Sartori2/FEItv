@@ -1,7 +1,7 @@
 # FEItv
 
 ## Sobre o Projeto
-O FEItv é uma plataforma de informações sobre vídeos desenvolvida como projeto da disciplina **Arquitetura de Software e Programação Orientada a Objetos (Java) - CCM310**, inspirada no YouTube.
+O FEItv é uma plataforma de informações sobre vídeos desenvolvida como projeto da disciplina **Arquitetura de Software e Programação Orientada a Objetos (Java)**, inspirada na plataforma YouTube.
 
 ## Tecnologias Utilizadas
 - **Java** - Linguagem de programação principal
